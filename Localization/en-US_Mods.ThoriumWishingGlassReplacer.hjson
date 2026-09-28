@@ -1,0 +1,37 @@
+Configs: {
+	WishingGlassConfig: {
+		DisplayName: Config
+
+		Headers: {
+			OriginalSettings: Original Settings
+			UnrestrictedSettings: Unrestricted Settings
+			FeatureSettings: Feature Settings
+		}
+
+		RevertToOriginalWishingGlass: {
+			Label: Revert To Original Wishing Glass
+			Tooltip: If enabled, reverts to the original functionality
+		}
+
+		ShowUpcomingDestinations: {
+			Label: Show Upcoming Destinations in Tooltip
+			Tooltip: If enabled, shows the upcoming destinations within the tooltip (Disabled while "Revert To Original Wishing Glass" is on)
+		}
+
+		EnableInfiniteDeathLocationTeleportation: {
+			Label: Enable Infinite Death Location Teleportation
+			Tooltip: If enabled, allows infinite teleportation of last death location (Disabled while "Revert To Original Wishing Glass" is on)
+		}
+
+		DisableChaosStateRestriction: {
+			Label: Disable Chaos State Restriction
+			Tooltip: If enabled, allows infinite teleportation of random location (Disabled while "Revert To Original Wishing Glass" is on)
+		}
+	}
+}
+
+Keybinds: {
+	CycleDestinationLeft.DisplayName: Cycle Destination Left
+	CycleDestinationRight.DisplayName: Cycle Destination Right
+	QuickUseWishingGlass.DisplayName: Quick Use Wishing Glass
+}

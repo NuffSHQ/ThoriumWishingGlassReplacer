@@ -1,0 +1,15 @@
+displayName = Thorium Wishing Glass Overhaul & Replacer
+name = ThoriumWishingGlassReplacer
+author = NuffSHQ
+version = 1.0.0
+side = Both
+homepage = InsertGitHubLinkHere
+buildIgnore = *.csproj, *.user, obj/**, bin/**, .vs/**, Old/**
+
+# Needed Dependency 
+sortAfter = ThoriumMod
+modReferences = ThoriumMod
+
+# Security & compilation packaging settings
+hideCode = false
+hideResources = false

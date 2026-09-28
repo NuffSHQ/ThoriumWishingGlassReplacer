@@ -1,0 +1,11 @@
+# Ignore tModLoader compilation folders
+bin/
+obj/
+
+# Ignore IDE settings
+.vs/
+*.user
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
