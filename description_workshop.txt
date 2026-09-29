@@ -3,7 +3,7 @@ A mod that overhauls and replaces the functionality of the wishing glass from th
 
 [h1] Key Features [/h1]
 
-[b] Change Destinations Through Righ-Click : [/b] Instead of changing locations only while in hand, instead locations change happen on right-click while in inventory similar to the shellphone. (Due to conflicts original UI selection has been removed)
+[b] Change Destinations Through Right-Click : [/b] Instead of changing locations only while in hand, instead locations change happen on right-click while in inventory similar to the shellphone. (Due to conflicts original UI selection has been removed)
 
 [b] Jungle Temple Tweak : [/b] Will now teleport the player next to the altar after golem has been defeated.
 
@@ -18,7 +18,7 @@ A mod that overhauls and replaces the functionality of the wishing glass from th
 [list]
     [*][b] Original Settings: [/b] Reverts to the original wishing glass functionality. (Disabled by Default)
     [*][b] Show Upcoming Destinations in Tooltip: [/b] Shows the upcoming destinations in the tooltip. (Enabled by Default)
-    [*][b] Enable Infinte Last Death Location Teleportation: [/b] Allows infinite teleportation to last death location. (Disabled by Default)
+    [*][b] Enable Infinite Last Death Location Teleportation: [/b] Allows infinite teleportation to last death location. (Disabled by Default)
     [*][b] Disable Chaos State Restriction: [/b] Allows infinite teleportation of random location without a cooldown.  (Disabled by Default)
 [/list]
 
