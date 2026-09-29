@@ -19,7 +19,7 @@ Configs: {
 		}
 
 		EnableInfiniteDeathLocationTeleportation: {
-			Label: Enable Infinite Death Location Teleportation
+			Label: Enable Infinite Last Death Location Teleportation
 			Tooltip: If enabled, allows infinite teleportation of last death location (Disabled while "Revert To Original Wishing Glass" is on)
 		}
 
