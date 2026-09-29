@@ -1,1 +1,21 @@
-Modify this file with a description of your mod.
+[c/FFFF00:Thorium Wishing Glass Overhaul & Replacer]
+A mod that overhauls and replaces the functionality of the wishing glass from the Thorium mod to make it more in-line with how the Shellphone functions.
+
+[c/FFFF00:Key Features]
+[c/ffeb3b:Change Destinations Through Right-Click:] Instead of changing locations only while in hand, instead locations happen on right-click while in inventory similar to the shellphone. (Due to conflicts original UI selection has been removed)
+
+[c/ffeb3b:Jungle Temple Tweak:] Will now teleport the player next to the altar after golem has been defeated.
+
+[c/ffeb3b:Hotkeys:] Adds three hotkeys 
+ ◦ [c/ffeb3b:Cycle Destination Left:] Cycle the destinations on the wishing glass to the left.
+ ◦ [c/ffeb3b:Cycle Destination Right:] Cycle the destinations on the wishing glass to the right.
+ ◦ [c/ffeb3b:Quick Use Wishing Glass:] Hotkey to allow quick use of the wishing glass.
+
+[c/ffeb3b:Config:] 
+ ◦ [c/ffeb3b:Original Settings:] Reverts to the original Wishing Glass functionality. (Disabled by Default)
+ ◦ [c/ffeb3b:Show Upcoming Destinations in Tooltip:] Shows the upcoming destinations in the tooltip. (Enabled by Default)
+ ◦ [c/ffeb3b:Enable Infinite Last Death Location Teleportation:] Allows infinite teleportation to last death location. (Disabled by Default)
+ ◦ [c/ffeb3b:Disable Chaos State Restriction:] Allows infinite teleportation of random location without a cooldown. (Disabled by Default)
+
+[c/FFFF00:Open Source] 
+The source code is fully viewable on GitHub or by extracting the mod.
