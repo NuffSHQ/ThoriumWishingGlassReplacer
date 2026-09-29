@@ -3,7 +3,7 @@ name = ThoriumWishingGlassReplacer
 author = NuffSHQ
 version = 1.0.0
 side = Both
-homepage = InsertGitHubLinkHere
+homepage = https://github.com/NuffSHQ/ThoriumWishingGlassReplacer
 buildIgnore = *.csproj, *.user, obj/**, bin/**, .vs/**, Old/**
 
 # Needed Dependency 
