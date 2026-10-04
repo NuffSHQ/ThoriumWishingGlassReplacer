@@ -14,6 +14,22 @@ namespace ThoriumWishingGlassReplacer.Content.Items
         private const string TargetModName = "ThoriumMod";
         private const string TargetItemName = "WishingGlass";
 
+        // Overrides the CanUseItem method to handle custom teleportation behavior for the Wishing Glass item.
+        public override bool CanUseItem(Item item, Player player)
+        {
+            // If config is on, revert to letting vanilla Thorium run normally
+            if (ModContent.GetInstance<WishingGlassConfig>().RevertToOriginalWishingGlass || !IsTargetItem(item))
+                return base.CanUseItem(item, player);
+
+            // Fetch your custom player script and force your custom teleportation behavior to run!
+            var modPlayer = player.GetModPlayer<WishingGlassPlayer>();
+            modPlayer.HandleWarpExecution();
+
+            // Prevents vanilla Thorium from running its own teleportation behavior
+            return false;
+        }
+
+        // Modifies the tooltip of the Wishing Glass item to show the selected destination and upcoming destinations based on the player's selection and config settings.
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
             // Returns true if the "RevertToOriginalWishingGlass" Config or the wishing glass could not be found.
@@ -68,7 +84,7 @@ namespace ThoriumWishingGlassReplacer.Content.Items
             }
         }
 
-        // Helper method that returns if the thorium mod, wishing glass is found
+        // Helper method that checks if the Thorium mod's, wishing glass is found
         private static bool IsTargetItem(Item item)
         {
             return item.ModItem != null && 
