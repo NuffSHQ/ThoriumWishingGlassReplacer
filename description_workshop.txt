@@ -10,20 +10,32 @@ A mod that overhauls and replaces the functionality of the wishing glass from th
 [b] Hotkeys: [/b] Adds three hotkeys
 [list]
     [*][b] Cycle Destination Left: [/b] Cycle the destinations on the wishing glass to the left.
+
     [*][b] Cycle Destination Right: [/b] Cycle the destinations on the wishing glass to the right.
+
     [*][b] Quick Use Wishing Glass: [/b] Hotkey to allow quick use of the wishing glass.
 [/list]
 
 [b] Config: [/b] 
 [list]
     [*][b] Original Settings: [/b] Reverts to the original wishing glass functionality. (Disabled by Default)
+
     [*][b] Show Upcoming Destinations in Tooltip: [/b] Shows the upcoming destinations in the tooltip. (Enabled by Default)
+
     [*][b] Enable Infinite Last Death Location Teleportation: [/b] Allows infinite teleportation to last death location. (Disabled by Default)
+
     [*][b] Disable Chaos State Restriction: [/b] Allows infinite teleportation of random location without a cooldown.  (Disabled by Default)
 [/list]
 
 [h1] Open Source [/h1] 
 The source code is fully viewable on GitHub or by extracting the mod.
+
+
+[h1] Recent Changes [/h1] 
+[list]
+    - Fixed still being able to use wishing glass while waiting to respawn.
+    - Integrated the replacer functionality directly into the UseItem hook.
+[/list]
 
 [h1] Notes [/h1] 
 If you find any issues, you can leave them down in the comments.
