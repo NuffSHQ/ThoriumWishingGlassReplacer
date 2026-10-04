@@ -179,10 +179,10 @@ namespace ThoriumWishingGlassReplacer.Content.Players
         }
 
         // Handles flag checks, chaos debuff, sets and play effects, and play sounds before teleporting the player.
-        private void HandleWarpExecution()
+        public void HandleWarpExecution()
         {
             // Prevents teleporting to death location if checks failed 
-            if (ForcedSelectionIndex == 6 && ((!ModContent.GetInstance<WishingGlassConfig>().EnableInfiniteDeathLocationTeleportation && hasUsedDeathTeleportForCurrentDeath) 
+            if (Player.dead ||ForcedSelectionIndex == 6 && ((!ModContent.GetInstance<WishingGlassConfig>().EnableInfiniteDeathLocationTeleportation && hasUsedDeathTeleportForCurrentDeath) 
                 || !hasDiedYet))
             {
                 return;
