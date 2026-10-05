@@ -8,8 +8,8 @@ buildIgnore = *.csproj, *.user, obj/**, bin/**, .vs/**, Old/**
 
 # Needed Dependency 
 modReferences = ThoriumMod
-@weakReferences = InfoAccessorySlots, TeleportUseInInfoSlots
-sortAfter = ThoriumMod, InfoAccessorySlots, TeleportUseInInfoSlots
+weakReferences = InfoAccessorySlots
+sortAfter = ThoriumMod
 
 # Security & compilation packaging settings
 hideCode = false
