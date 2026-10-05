@@ -30,11 +30,11 @@ A mod that overhauls and replaces the functionality of the wishing glass from th
 [h1] Open Source [/h1] 
 The source code is fully viewable on GitHub or by extracting the mod.
 
-
 [h1] Recent Changes [/h1] 
 [list]
-    - Fixed still being able to use wishing glass while waiting to respawn.
-    - Integrated the replacer functionality directly into the UseItem hook.
+    - Added cross-mod support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3665159143]InfoAccessorySlots by Moonlight Glint[/url].
+        - Allows use of hotkeys inside of the info slots. 
+        - Not required, but if using other info items that has teleportation you can also download my other mod as well, Teleport Use In Info Slots, which allows using teleport accessory inside the info slot.
 [/list]
 
 [h1] Notes [/h1] 

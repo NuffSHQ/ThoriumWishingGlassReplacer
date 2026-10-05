@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using System;
 using ThoriumWishingGlassReplacer.Config;
 using ThoriumWishingGlassReplacer.Content.Keybind;
+using System.Reflection;
 
 namespace ThoriumWishingGlassReplacer.Content.Players
 {
@@ -106,15 +107,18 @@ namespace ThoriumWishingGlassReplacer.Content.Players
             }
         }
 
-        // Retrieves key presses and runs code if player has the Wishing Glass and if any of the mod's hotkeys are pressed.
+       // Retrieves key presses and runs code if player has the Wishing Glass and if any of the mod's hotkeys are pressed.
         public override void ProcessTriggers(Terraria.GameInput.TriggersSet triggersSet)
         {   
             // If "RevertToOriginalWishingGlass" is true, early exits the method
             if (ModContent.GetInstance<WishingGlassConfig>().RevertToOriginalWishingGlass)
                 return;
 
+            Item infoSlot = FindWishingGlassInInfoSlots(); 
+
             // Execute code if player has Wishing Glass and depending on which hotkey is pressed 
-            if (TryGetWishingGlassType(out int glassType) && Player.HasItem(glassType))
+            // Fixed operator precedence via parentheses group checking to ensure total type safety
+            if (TryGetWishingGlassType(out int glassType) && (Player.HasItem(glassType) || infoSlot is not null))
             {
                 if (WishingGlassKeybinds.CycleLeftKey.JustPressed)
                 {
@@ -360,10 +364,57 @@ namespace ThoriumWishingGlassReplacer.Content.Players
                     }
                 }
             }
-        
+
         // Fallback if Jungle Temple door couldn't be located
         return new Vector2(Main.spawnTileX * 16, Main.spawnTileY * 16);
+        }
 
+         // Scans the custom info accessory slots for a valid teleportation device by using reflection to access the fields of the "InfoAccessorySlots" ModPlayer.
+        private Item FindWishingGlassInInfoSlots()
+        {
+            ModPlayer infoModPlayer = null;
+
+            // Iterate through all ModPlayer instances attached to the player to find the one related to "InfoAccessorySlots"
+            foreach (var modPlayer in Player.ModPlayers)
+            {
+                if (modPlayer.GetType().FullName.Contains("InfoAccessorySlots"))
+                {
+                    infoModPlayer = modPlayer;
+                    break;
+                }
+            }
+
+            if (infoModPlayer == null)
+            {
+                return null;
+            }
+
+            // Use reflection to access the fields of the "InfoAccessorySlots" ModPlayer to find the inventory array
+            var fields = infoModPlayer.GetType().GetFields(BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+            FieldInfo targetInventoryField = null;
+
+            // Iterate through the fields to find the one that holds the inventory of items inside the array of Items
+            foreach (var f in fields)
+            {
+                if (f.FieldType == typeof(Item[]))
+                {
+                    targetInventoryField = f;
+                    break;
+                }
+            }
+
+            // If the target inventory field is found, retrieve its value and iterate through the items to find a wishing glass
+            if (targetInventoryField?.GetValue(infoModPlayer) is System.Collections.IEnumerable rawCollection)
+            {
+                foreach (object element in rawCollection)
+                {
+                    if (element is Item infoItem && infoItem != null && !infoItem.IsAir && infoItem.ModItem?.Name == "WishingGlass")
+                    {
+                        return infoItem;
+                    }
+                }
+            }
+            return null;
         }
     }
 }
